@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeRoom</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src = "https://cdn.jsdelivr.net/gh/user/repo@version/file"></script> -->
+  <link href="/css/home.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+      <div class="btns"><a href="/room/" onclick="createRoomId(event)" class="btn-link">Create Room</a></div>
+      <div class="logo">
+        <!-- <img src="/img/duckLeft5.png" class="duck">
+        <h1 class="web-name">CodeRoom</h1>
+        <img src="/img/duckRight6.png" class="duck"> -->
+        <h1 class="web-name">&lt; Code</h1>
+        <img src="/img/duckFace.png" class="duck">
+        <h1 class="web-name">Room &gt;</h1>
+      </div>
+
+      <div class="btns"><a onclick="joinRoom()" class='btn-link'>Join Room</a></div>
+    </div>
+
+  </nav>
+
+  <div class="modal modal-form" style="display: none;">
+    <div class='bg-modal'>
+      <div class="modal-content">
+        <form method="GET" action="">
+          <div class="close-container"><img src="/img/close.png" class="close" onclick="closeModalForm(event)"></div>
+          <div class="form-input">
+            <label for="roomId"><b>Enter Room Link</b></label>
+            <input type="text" name="roomId" class="roomId">
+          </div>
+          <button type="submit" class="submit-join">Join Room</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-about" style="display: none;">
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close-container"><img src="/img/close.png" class="close" onclick="closeModalAbout(event)"></div>
+        <div class = "about-content">
+          <p>Howdy!!</p>
+          <p>I am Dhiren Chugh, a Compute Science student.</p>
+          <p>I have a passion for design and like to solve challenging problems which
+            involve both creativity and logic.
+          </p>
+          <p> I made this as a personal project but thought it would be helpful for coders
+            who want a free service for pair programming.
+          </p>
+          <p>If you want to know more about me or this project , hit me up on LinkedIn or you
+            can reach me on my mail(dhirenchugh23@gmail.com)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <img src="/img/bgFront.svg" class="bg-front">
+  </div>
+  <hr class="ruler">
+  <section class="content">
+    <h2 class="topics">What is Code Room</h2>
+    <!-- video-->
+    <div class="content-container">
+      <h2>A Real Time Collaborative Code Editor for Pair Programming</h2>
+
+      <p> Want to code together with your team. Don't worry we have got you covered</p>
+      <p> You can code with as many people as you want or as you network can support.</p>
+      <ul>
+        <h4>Steps for Pair Coding:</h4>
+        <li>Click on Create Room on top of page</li>
+        <li> Share the page link with your team</li>
+        <li> Your team member should click on Join Room</li>
+        <li> Then he/she must paste the link in dialogue box that appears and click on Join button</li>
+        <li> Voila!! You can now code together.</li>
+      </ul>
+      <p> That's it, you're good to go</p>
+    </div>
+
+    <h2 class="topics">Technical Details</h2>
+    <div class="content-container">
+      <p> Well CodeRoom is not just a simple WebSocket copy pasting code from one client to another.</p>
+      <p> We rely on a <strong>Peer to Peer architecture</strong> with the help of <strong>WebRTC</strong> and use <strong>WebSockets for only
+          signalling purpose.</strong>
+      </p>
+      <p> <strong>Signalling Server</strong> is only used for initial connection , after that messages are
+        transferred using <strong>UDP Protocol</strong> with the help of <strong>WebRTC Data Channels</strong>.
+      </p>
+      <p> So what that means is, you do not have a single point of failure and even if you loose connection with the signalling server ,
+        you can still remain in connection with already linked peers.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="about">
+      <a onclick="aboutMe()">About Me</a>
+    </div>
+    <div class="author-container">
+      <img src="/img/duckLeft5.png" class="duck-bracket">
+      <h1 class="author">&copy; 2021 Dhiren Chugh</h1>
+      <img src="/img/duckRight6.png" class="duck-bracket">
+    </div>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/dhiren-chugh-65558417b/" class="icons"><img src="/img/linkedin.png" class="icons"></a>
+      <a href="mailto: dhirenchugh23@gmail.com" class="icons"><img src="/img/mail.png" class="icons"></a>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <script>
+    function createRoomId(event) {
+      const a = event.target;
+      const id = uuid.v4();
+      a.href += id;
+    }
+
+    const modalForm = document.querySelector(".modal-form");
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (event) => {
+      const rid = document.querySelector(".roomId");
+      form.action = rid.value;
+    });
+
+    function joinRoom(event) {
+      modalForm.style.display = "block";
+    }
+
+    function closeModalForm() {
+      modalForm.style.display = "none";
+    }
+
+
+    const modalAbout = document.querySelector(".modal-about");
+
+    function aboutMe() {
+      modalAbout.style.display = "block";
+    }
+
+    function closeModalAbout() {
+      modalAbout.style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
