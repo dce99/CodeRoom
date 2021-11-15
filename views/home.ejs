@@ -54,11 +54,11 @@
   <div class="modal modal-form" style="display: none;">
     <div class='bg-modal'>
       <div class="modal-content">
-        <form method="GET" action="/room/">
+        <form method="GET" action= "">
           <div class="close-container"><img src="/img/close.png" class="close" onclick="closeModalForm(event)"></div>
           <div class="form-input">
-            <label for="roomId"><b>Enter Room Link</b></label>
-            <input type="text" name="roomId" class="roomId">
+            <label ><b>Enter Room Link</b></label>
+            <input type="text" class="roomId">
           </div>
           <button type="submit" class="submit-join">Join Room</button>
         </form>
@@ -155,8 +155,15 @@
     const modalForm = document.querySelector(".modal-form");
     const form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const a = document.createElement("a");
       const rid = document.querySelector(".roomId");
-      form.action += rid.value;
+      let s = String(window.location);
+      s = s.concat("room/");
+      s = s.concat(String(rid.value).slice(1));
+      // form.setAttribute("action", s);
+      a.setAttribute("href", s);
+      a.click();
     });
 
     function joinRoom(event) {
