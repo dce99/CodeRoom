@@ -43,7 +43,7 @@
         <img src="/img/duckRight6.png" class="duck"> -->
         <h1 class="web-name">&lt; Code</h1>
         <img src="/img/duckFace.png" class="duck">
-        <h1 class="web-name">Room &gt;</h1>
+        <h1 class="web-name" style="margin-left: 0;">Room &gt;</h1>
       </div>
 
       <div class="btns"><a onclick="joinRoom()" class='btn-link'>Join Room</a></div>
@@ -54,7 +54,7 @@
   <div class="modal modal-form" style="display: none;">
     <div class='bg-modal'>
       <div class="modal-content">
-        <form method="GET" action="">
+        <form method="GET" action="/room/">
           <div class="close-container"><img src="/img/close.png" class="close" onclick="closeModalForm(event)"></div>
           <div class="form-input">
             <label for="roomId"><b>Enter Room Link</b></label>
@@ -101,10 +101,10 @@
       <p> You can code with as many people as you want or as you network can support.</p>
       <ul>
         <h4>Steps for Pair Coding:</h4>
-        <li>Click on Create Room on top of page</li>
-        <li> Share the page link with your team</li>
+        <li>Click on Create Room on top of page. RoomId is present on top right of the page.</li>
+        <li> Share the RoomId(top right corner) with your team</li>
         <li> Your team member should click on Join Room</li>
-        <li> Then he/she must paste the link in dialogue box that appears and click on Join button</li>
+        <li> Then he/she must paste the RoomId in dialogue box that appears and click on Join button</li>
         <li> Voila!! You can now code together.</li>
       </ul>
       <p> That's it, you're good to go</p>
@@ -156,7 +156,7 @@
     const form = document.querySelector("form");
     form.addEventListener("submit", (event) => {
       const rid = document.querySelector(".roomId");
-      form.action = rid.value;
+      form.action += rid.value;
     });
 
     function joinRoom(event) {
