@@ -1,4 +1,4 @@
-// const Version = require("./Version");
+const Version = require("./Version");
 
 class VersionClock{
 
@@ -45,4 +45,4 @@ class VersionClock{
 
 }
 
-// module.exports = VersionClock;
+module.exports = VersionClock;

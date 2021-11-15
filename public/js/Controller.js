@@ -1,9 +1,9 @@
 // const uuid = require("uuid");
-// const Peer = require("./Peer");
-// const VersionClock = require("./VersionClock");
-// const Char = require("./Char");
-// const Version = require("./Version");
-// const CRDT = require("./Crdt");
+const Peer = require("./Peer");
+const VersionClock = require("./VersionClock");
+const Char = require("./Char");
+const Version = require("./Version");
+const CRDT = require("./Crdt");
 const socket = io();
 
 class Controller {
@@ -320,5 +320,5 @@ class Controller {
 }
 
 
-// module.exports = Controller;
+module.exports = Controller;
 

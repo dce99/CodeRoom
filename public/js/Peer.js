@@ -229,4 +229,4 @@ class Peer {
 }
 
 
-// module.exports = Peer;
+module.exports = Peer;

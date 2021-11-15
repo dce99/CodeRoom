@@ -1,4 +1,4 @@
-// const Identifier = require("./Identifier");
+const Identifier = require("./Identifier");
 
 class Char{
     constructor(siteId ,position, value, counter){
@@ -28,5 +28,5 @@ class Char{
     }
 }
 
-// module.exports = Char;
+module.exports = Char;
 

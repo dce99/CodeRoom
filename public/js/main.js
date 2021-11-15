@@ -1,6 +1,6 @@
 
-// const Controller = require("./Controller");
-// const Editor = require("./Editor");
+const Controller = require("./Controller");
+const Editor = require("./Editor");
 const textArea = document.querySelector("#textArea");
 const configCdm = {
     // value :" <Write your code here, Share the link to invite collaborators to your document.>",

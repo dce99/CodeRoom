@@ -26,4 +26,4 @@ class Version {
 }
 
 
-// module.exports = Version;
+module.exports = Version;

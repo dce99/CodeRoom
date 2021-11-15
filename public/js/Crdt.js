@@ -1,5 +1,5 @@
-// const Identifier = require("./Identifier");
-// const Char = require("./Char");
+const Identifier = require("./Identifier");
+const Char = require("./Char");
 
 class CRDT {
 
@@ -291,4 +291,4 @@ class CRDT {
 
 }
 
-// module.exports = CRDT;
+module.exports = CRDT;

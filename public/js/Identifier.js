@@ -17,4 +17,4 @@ class Identifier{
     }
 }
 
-// module.exports = Identifier;
+module.exports = Identifier;

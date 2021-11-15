@@ -154,4 +154,4 @@ class Editor {
 }
 
 
-// module.exports = Editor;
+module.exports = Editor;
