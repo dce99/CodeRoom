@@ -150,8 +150,8 @@ footer{
 }
 
 .duck-bracket{
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 90px;
+    max-width: 90px;
     /* box-shadow: 0px 2px 2px 3px  gray; */
 }
 
@@ -166,7 +166,7 @@ footer{
     color : white;
     text-shadow: 1px 1px 4px rgb(0, 0, 0);
     margin-top:auto;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: auto;
 }
 
@@ -180,7 +180,7 @@ footer{
     color: rgb(31, 31, 31);
     cursor: pointer;
     padding : 8px;
-    font-size : 1.5rem;
+    font-size : 1.4rem;
     background-color : white;
     border-radius: 0.7rem;
     font-family: "Lato", sans-serif;
@@ -197,8 +197,8 @@ footer{
 }
 
 .icons{
-    max-height: 50px;
-    max-width: 50px;
+    max-height: 40px;
+    max-width: 40px;
     margin : 0 10px 0 10px;
     margin-bottom: auto;
     margin-top: auto;
