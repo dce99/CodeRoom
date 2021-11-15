@@ -57,8 +57,9 @@ h2{
 }
 
 .btn-link{
+    display: inline-block;
     margin-top: 20px;
-    padding : 5%;
+    padding : 10px;
     text-decoration: none;
     background-color: white;
     border-radius: 1rem;

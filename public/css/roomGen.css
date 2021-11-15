@@ -55,25 +55,24 @@ h2{
 
 .btns{
     margin-top: 20px;
-    width: 10%;
     margin-left: 20px;
-    height: max-content;
 }
 
 .btn-link{
+    display: inline-block;
     margin-top: 20px;
-    padding : 5%;
+    padding : 20px;
     text-decoration: none;
     background-color: white;
     border-radius: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-shadow: 1px 1px 1px rgb(90, 90, 90);
     color : crimson;
     box-shadow: 2px 2px 2px 2px black;
     cursor: pointer;
 }
 
-.btns:hover{
+.btn-link:hover{
     /* background-color: khaki; */
     box-shadow: 0px 0px 0px 0px black;
     transform: scale(0.95);
