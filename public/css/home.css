@@ -51,7 +51,7 @@ h2{
 
 .btns{
     margin-top: 20px;
-    width: 10%;
+    width: 12%;
     margin-left: 20px;
     height: max-content;
 }
@@ -59,7 +59,7 @@ h2{
 .btn-link{
     display: inline-block;
     margin-top: 20px;
-    padding : 10px;
+    padding : 8px;
     text-decoration: none;
     background-color: white;
     border-radius: 1rem;
