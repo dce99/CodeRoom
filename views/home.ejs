@@ -160,7 +160,7 @@
       const rid = document.querySelector(".roomId");
       let s = String(window.location);
       s = s.concat("room/");
-      s = s.concat(String(rid.value).slice(1));
+      s = s.concat(String(rid.value));
       // form.setAttribute("action", s);
       a.setAttribute("href", s);
       a.click();
