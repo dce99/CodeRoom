@@ -14,7 +14,7 @@ const server = require("http").createServer(app);
 const io = require('socket.io')(server, { cors: { origin: "*", methods: ["GET", "POST"] } });
 
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const dbURI = process.env.DB_URI || "mongodb://localhost:27017/intro-db";
 mongoose.connect(
   dbURI,
