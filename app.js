@@ -12,8 +12,8 @@ const path = require("path");
 const app = express();
 const server = require("http").createServer(app);
 const io = require('socket.io')(server, { cors: { origin: "*", methods: ["GET", "POST"] } });
-const Dockerode = require("dockerode");
-const docker = new Dockerode();
+// const Dockerode = require("dockerode");
+// const docker = new Dockerode();
 
 const PORT = process.env.PORT || 3000;
 const dbURI = process.env.DB_URI || "mongodb://localhost:27017/intro-db";
@@ -48,16 +48,16 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 
-let ver;
-docker.version().then(x => {
-  console.log(x); ver = x;
-}
-)
+// let ver;
+// docker.version().then(x => {
+//   console.log(x); ver = x;
+// }
+// )
 
 app.get("/", async (req, res) => {
   try {
-    res.status(200).send({ msg: ver });
-    // res.render("home");
+    // res.status(200).send({ msg: ver });
+    res.render("home");
   }
   catch (err) {
     console.log(err);
