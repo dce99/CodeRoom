@@ -17,5 +17,9 @@ The central server is only used for initial connection phase and once a client i
 - Home Page
 [![ss1.png](https://i.postimg.cc/XYwLw5Bt/ss1.png)](https://postimg.cc/yD80KkPT)
 
+- Technical Details
+  <img width="1401" alt="Screenshot 2023-12-29 at 6 27 36 PM" src="https://github.com/dce99/CodeRoom/assets/94372740/f68ac53e-f9c3-4c95-890a-6af3d57a1329">
+
+
 - Code Editor Demo
 [![ss2.png](https://i.postimg.cc/wMC5Nxq6/ss2.png)](https://postimg.cc/YLxmKHLV)
