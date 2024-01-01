@@ -14,7 +14,7 @@ class Peer {
 
         fetch(`https://coderoom.metered.live/api/v1/turn/credentials?apiKey=${process.env.TURN_SERVER_API_KEY}`)
             .then(response => response.json())
-            .then((result) => { config.push(result) })
+            .then((result) => { config.push(result), console.log(config); })
             .catch(err => console.log(err));
     }
 
