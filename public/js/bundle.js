@@ -950,6 +950,7 @@ class Peer {
     }
 
     async sendRequest(peerId) {
+        console.log("sending request");
         const peerCon = this.getOutConnection(peerId);
         const offer = await peerCon.createOffer();
         await peerCon.setLocalDescription(offer);
@@ -981,6 +982,7 @@ class Peer {
     }
 
     async acceptOffer(peerId, msg) {
+        console.log("accepted offer");
         const peerCon = this.getInConnection(peerId);
         this.addToOutConn(peerCon);
         await peerCon.setRemoteDescription(new RTCSessionDescription(msg));
@@ -990,6 +992,7 @@ class Peer {
     }
 
     async acceptAnswer(peerId, msg) {
+        console.log("accepted answer");
         const peerCon = this.getOutConnection(peerId);
         const sd = new RTCSessionDescription(msg);
         await peerCon.setRemoteDescription(sd);
