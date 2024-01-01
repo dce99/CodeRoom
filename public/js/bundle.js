@@ -849,7 +849,7 @@ class Peer {
 
         fetch(`https://coderoom.metered.live/api/v1/turn/credentials?apiKey=${'086477e41a569760384a2b60353c9f0da3f2'}`)
             .then(response => response.json())
-            .then((result) => { config.iceServers.push(...result), console.log("Hello, ", config); })
+            .then((result) => { config.iceServers = [result[2], result[3]]; console.log("Hello, ", config); })
             .catch(err => console.log(err));
     }
 
