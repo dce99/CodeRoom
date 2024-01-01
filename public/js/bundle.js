@@ -835,7 +835,14 @@ module.exports = Identifier;
 },{}],6:[function(require,module,exports){
 
 const config = {
-    'iceServers': [{ 'urls': 'stun:stun.1.google.com:19302' }]
+    'iceServers': [
+        {
+            urls: "relay1.expressturn.com:3478",
+            username: "efYJRL4532XL1B7MGQ",
+            credential: "LySVmPrLvLastnyU",
+        },
+        { 'urls': 'stun:stun.1.google.com:19302' }
+    ]
 };
 
 class Peer {
@@ -846,11 +853,6 @@ class Peer {
         this.inConn = []; // incoming peer connections
         this.dc = []; // dataChannels of the peer connections
         this.controller = null;
-
-        fetch(`https://coderoom.metered.live/api/v1/turn/credentials?apiKey=${'086477e41a569760384a2b60353c9f0da3f2'}`)
-            .then(response => response.json())
-            .then((result) => { config.iceServers = [result[2], result[3]]; console.log("Hello, ", config); })
-            .catch(err => console.log(err));
     }
 
     receiveMesage(message) {
@@ -899,7 +901,6 @@ class Peer {
 
 
     getOutConnection(peerId) {
-        console.log(config);
         if (this.outConn[peerId] == undefined) {
             this.outConn[peerId] = new RTCPeerConnection(config);
             const peerCon = this.outConn[peerId];
