@@ -837,7 +837,7 @@ module.exports = Identifier;
 const config = {
     'iceServers': [
         {
-            urls: "relay1.expressturn.com:3478",
+            urls: "turn:relay1.expressturn.com:3478",
             username: "efYJRL4532XL1B7MGQ",
             credential: "LySVmPrLvLastnyU",
         },
