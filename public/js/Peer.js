@@ -1,11 +1,6 @@
 
 const config = {
-    'iceServers': [{ 'urls': 'stun:stun.1.google.com:19302' },
-    {
-        url: 'turn:numb.viagenie.ca',
-        credential: 'muazkh',
-        username: 'webrtc@live.com'
-    }]
+    'iceServers': [{ 'urls': 'stun:stun.1.google.com:19302' }]
 };
 
 class Peer {
@@ -16,6 +11,11 @@ class Peer {
         this.inConn = []; // incoming peer connections
         this.dc = []; // dataChannels of the peer connections
         this.controller = null;
+
+        fetch(`https://coderoom.metered.live/api/v1/turn/credentials?apiKey=${process.env.TURN_SERVER_API_KEY}`)
+            .then(response => response.json())
+            .then((result) => { config.push(result) })
+            .catch(err => console.log(err));
     }
 
     receiveMesage(message) {
